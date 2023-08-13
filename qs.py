@@ -1,4 +1,6 @@
 from random import shuffle
+
+
 def qs(arr):
     if len(arr) <= 1:
         return arr
@@ -20,7 +22,8 @@ def qs(arr):
 
     return sorted_smaller + [pivot_element] + sorted_larger
 
-list = [5,3,1,7,4,6,2,8]
+
+list = [5, 3, 1, 7, 4, 6, 2, 8]
 shuffle(list)
 print("PRE SORT: ", list)
 print(qs(list))
