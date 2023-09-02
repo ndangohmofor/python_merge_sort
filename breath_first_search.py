@@ -19,4 +19,4 @@ if goal_path is None:
 else:
     print("Path found")
     for node in goal_path:
-        print(node.value )
+        print(node.value)
