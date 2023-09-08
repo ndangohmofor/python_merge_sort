@@ -30,6 +30,13 @@ class BinarySearchTree:
         else:
             return None
 
+    def depth_first_traversal(self):
+        if self.left:
+            self.left.depth_first_traversal()
+        print("Depth={0}, Value={1}".format(self.depth, self.value))
+        if self.right:
+            self.right.depth_first_traversal()
+
 
 root = BinarySearchTree(100)
 
@@ -42,3 +49,13 @@ root.insert(25)
 # Get nodes by value below:
 print(root.get_node_by_value(75).value)
 print(root.get_node_by_value(55))
+
+tree = BinarySearchTree(48)
+tree.insert(24)
+tree.insert(55)
+tree.insert(26)
+tree.insert(38)
+tree.insert(56)
+tree.insert(74)
+
+tree.depth_first_traversal()
