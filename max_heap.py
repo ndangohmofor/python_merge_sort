@@ -72,6 +72,8 @@ class MaxHeap:
             child = self.heap_list[larger_child_idx]
             parent = self.heap_list[idx]
             if parent < child:
-                self.heap_list[idx], self.heap_list[larger_child_idx] = child, parent
+                self.heap_list[idx] = child
+                self.heap_list[larger_child_idx] = parent
             idx = larger_child_idx
-            print("HEAP RESTORED! {0}".format(self.heap_list))
+        print("HEAP RESTORED! {0}".format(self.heap_list))
+        print("")
