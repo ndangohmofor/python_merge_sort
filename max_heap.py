@@ -28,6 +28,9 @@ class MaxHeap:
             idx = parent_idx(idx)
         print("Heap Restored {0}".format(self.heap_list))
 
+    def child_present(self, idx):
+        return left_child_idx(idx) <= self.count
+
     def add(self, element):
         self.count += 1
         print("Adding: {0} to {1}".format(element, self.heap_list))
