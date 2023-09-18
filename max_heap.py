@@ -47,6 +47,7 @@ class MaxHeap:
         self.count -= 1
         self.heap_list.pop()
         print("Last element moved to first: [{0}]".format(self.heap_list))
+        self.heapify_down()
         return max_val
 
     def get_larger_child_idx(self, idx):
@@ -63,3 +64,14 @@ class MaxHeap:
                 print("Right child {0} is larger than left child".format(right_child))
                 return right_child_idx(idx)
 
+    def heapify_down(self):
+        idx = 1
+        while self.child_present(idx):
+            print("Heapifying down!")
+            larger_child_idx = self.get_larger_child_idx(idx)
+            child = self.heap_list[larger_child_idx]
+            parent = self.heap_list[idx]
+            if parent < child:
+                self.heap_list[idx], self.heap_list[larger_child_idx] = child, parent
+            idx = larger_child_idx
+            print("HEAP RESTORED! {0}".format(self.heap_list))
