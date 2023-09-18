@@ -33,3 +33,15 @@ class MaxHeap:
         print("Adding: {0} to {1}".format(element, self.heap_list))
         self.heap_list.append(element)
         self.heapify_up()
+
+    def retrieve_max(self):
+        if self.count == 0:
+            print("No items in heap")
+            return None
+        max_val = self.heap_list[1]
+        print("Removing [{0}] from [{1}]".format(max_val, self.heap_list))
+        self.heap_list[1] = self.heap_list[self.count]
+        self.count -= 1
+        self.heap_list.pop()
+        print("Last element moved to first: [{0}]".format(self.heap_list))
+        return max_val
