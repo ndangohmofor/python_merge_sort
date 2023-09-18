@@ -48,3 +48,18 @@ class MaxHeap:
         self.heap_list.pop()
         print("Last element moved to first: [{0}]".format(self.heap_list))
         return max_val
+
+    def get_larger_child_idx(self, idx):
+        if right_child_idx(idx) > self.count:
+            print("There is only a left child")
+            return left_child_idx(idx)
+        else:
+            left_child = self.heap_list[left_child_idx(idx)]
+            right_child = self.heap_list[right_child_idx(idx)]
+            if left_child > right_child:
+                print("Left child {0} is larger than right child".format(left_child))
+                return left_child_idx(idx)
+            else:
+                print("Right child {0} is larger than left child".format(right_child))
+                return right_child_idx(idx)
+
