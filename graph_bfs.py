@@ -11,4 +11,20 @@ def bfs(graph, start_vertex, target_value):
         visited.add(current_vertex)
 
         for neighbor in graph[current_vertex]:
-            pass
+            if neighbor not in visited:
+                if neighbor == target_value:
+                    return path + [neighbor]
+                else:
+                    bfs_queue.append([neighbor, path + [neighbor]])
+
+the_most_dangerous_graph = {
+    'lava': set(['sharks', 'piranhas']),
+    'sharks': set(['lava', 'bees', 'lasers']),
+    'piranhas': set(['lava', 'crocodiles']),
+    'bees': set(['sharks']),
+    'lasers': set(['sharks', 'crocodiles']),
+    'crocodiles': set(['piranhas', 'lasers'])
+  }
+
+print(bfs(the_most_dangerous_graph, "crocodiles", "bees"))
+
