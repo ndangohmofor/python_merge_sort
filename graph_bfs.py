@@ -18,12 +18,12 @@ def bfs(graph, start_vertex, target_value):
                     bfs_queue.append([neighbor, path + [neighbor]])
 
 the_most_dangerous_graph = {
-    'lava': set(['sharks', 'piranhas']),
-    'sharks': set(['lava', 'bees', 'lasers']),
-    'piranhas': set(['lava', 'crocodiles']),
-    'bees': set(['sharks']),
-    'lasers': set(['sharks', 'crocodiles']),
-    'crocodiles': set(['piranhas', 'lasers'])
+    'lava': {'sharks', 'piranhas'},
+    'sharks': {'lava', 'bees', 'lasers'},
+    'piranhas': {'lava', 'crocodiles'},
+    'bees': {'sharks'},
+    'lasers': {'sharks', 'crocodiles'},
+    'crocodiles': {'piranhas', 'lasers'}
   }
 
 print(bfs(the_most_dangerous_graph, "crocodiles", "bees"))
