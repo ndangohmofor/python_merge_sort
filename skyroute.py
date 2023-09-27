@@ -35,6 +35,12 @@ def set_start_and_end(start_point, end_point):
             print("Oops, that isn't 'o', 'd' or 'b' ...")
             set_start_and_end(start_point, end_point)
 
+    else:
+        start_point = get_start()
+        end_point = get_end()
+
+    return start_point, end_point
+
 
 def get_start():
     start_point_letter = input("Where are you coming from? Type in the corresponding letter: ")
@@ -54,3 +60,6 @@ def get_end():
     else:
         print("Sorry, that's not a landmark we have data on. Let's try this again...")
         get_end()
+
+
+print(set_start_and_end(None, None))
