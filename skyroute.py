@@ -37,7 +37,13 @@ def set_start_and_end(start_point, end_point):
 
 
 def get_start():
-    pass
+    start_point_letter = input("Where are you coming from? Type in the corresponding letter: ")
+    if start_point_letter in landmark_choices:
+        start_point = landmark_choices[start_point_letter]
+        return start_point
+    else:
+        print("Sorry, that's not a landmark we have data on. Let's try this again...")
+        get_start()
 
 
 def get_end():
