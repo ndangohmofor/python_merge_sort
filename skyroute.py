@@ -62,4 +62,8 @@ def get_end():
         get_end()
 
 
+def new_route(start_point=None, end_point=None):
+    start_point, end_point = set_start_and_end(start_point, end_point)
+
+
 print(set_start_and_end(None, None))
