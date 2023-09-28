@@ -63,11 +63,21 @@ def get_end():
         get_end()
 
 
+def show_landmark():
+    see_landmarks = input("Would you like to see the list of landmarks again? y/n: ")
+    if see_landmarks == 'y':
+        print(landmark_string)
+
+
 def new_route(start_point=None, end_point=None):
     start_point, end_point = set_start_and_end(start_point, end_point)
     shortest_route = get_route(start_point, end_point)
     shortest_route_string = '\n'.join(shortest_route)
     print("The shortest route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
+    again = input("Would you like to see other routes? y/n: ")
+    if again == 'y':
+        show_landmark()
+        new_route(start_point, end_point)
 
 
 def get_route(start, target):
