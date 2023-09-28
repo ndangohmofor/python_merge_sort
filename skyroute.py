@@ -5,7 +5,7 @@ from landmark_choices import landmark_choices
 
 landmark_string = ''
 for letter, landmark in landmark_choices.items():
-    landmark_string += "{0} - {1}".format(letter, landmark)
+    landmark_string += "{0} - {1}\n".format(letter, landmark)
 
 
 def greet():
@@ -15,6 +15,7 @@ def greet():
 
 def skyroute():
     greet()
+    new_route()
 
 
 def set_start_and_end(start_point, end_point):
@@ -64,6 +65,9 @@ def get_end():
 
 def new_route(start_point=None, end_point=None):
     start_point, end_point = set_start_and_end(start_point, end_point)
+    shortest_route = get_route(start_point, end_point)
+    shortest_route_string = '\n'.join(shortest_route)
+    print("The shortest route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
 
 
 def get_route(start, target):
@@ -79,4 +83,4 @@ def get_route(start, target):
     return shortest_route
 
 
-print(get_route('Granville Street', 'Central Park'))
+skyroute()
