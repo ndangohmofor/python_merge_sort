@@ -16,6 +16,7 @@ def greet():
 def skyroute():
     greet()
     new_route()
+    goodbye()
 
 
 def set_start_and_end(start_point, end_point):
@@ -92,5 +93,8 @@ def get_route(start, target):
     shortest_route = min(routes, key=len)
     return shortest_route
 
+
+def goodbye():
+    print("Thanks for using SkyRoute!")
 
 skyroute()
