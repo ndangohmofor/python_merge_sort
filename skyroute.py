@@ -93,7 +93,12 @@ def get_route(start, target):
     routes = []
     for start in start_stations:
         for end in end_stations:
-            route = bfs(vc_metro, start, end)
+            metro_system = get_active_stations() if stations_under_construction else vc_metro
+            if stations_under_construction:
+                possible_route = dfs(metro_system, start, end)
+                if not possible_route:
+                    return None
+            route = bfs(metro_system, start, end)
             if route:
                 routes.append(route)
     shortest_route = min(routes, key=len)
