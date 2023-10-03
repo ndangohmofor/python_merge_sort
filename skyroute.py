@@ -110,6 +110,9 @@ def get_active_stations():
         for current_station in vc_metro.items():
             if current_station != station_under_construction:
                 updated_metro[current_station] -= set(stations_under_construction)
+            else:
+                updated_metro[current_station] = set([])
+    return updated_metro
 
 
 skyroute()
