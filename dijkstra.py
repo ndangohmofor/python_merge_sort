@@ -9,7 +9,8 @@ graph = {
     'B': [('C', 3), ('D', 2)]
 }
 
-def dijkstras(graph,start):
+
+def dijkstras(graph, start):
     distances = {}
     for vertex in graph:
         distances[vertex] = inf
