@@ -5,7 +5,7 @@ graph = {
     'A': [('B', 10), ('C', 3)],
     'C': [('D', 2)],
     'D': [('E', 10)],
-    'E': [],
+    'E': [('A', 7)],
     'B': [('C', 3), ('D', 2)]
 }
 
@@ -24,3 +24,7 @@ def dijkstras(graph, start):
                 distances[neighbor] = new_distance
                 heappush(vertices_to_explore, (new_distance, neighbor))
     return distances
+
+
+distances_from_d = dijkstras(graph, 'D')
+print("\n\nShortest Distances: {0}".format(distances_from_d))
