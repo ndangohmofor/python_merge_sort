@@ -78,3 +78,5 @@ def traveling_salesperson(graph):
     print(final_path)
 
 
+graph = build_tsp_graph(False)
+traveling_salesperson(graph)
