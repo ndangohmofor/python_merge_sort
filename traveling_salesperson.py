@@ -14,6 +14,7 @@ def print_graph(graph):
         for adjacent_vertex in vertex_neighbors:
             print("=> " + adjacent_vertex)
 
+
 def build_tsp_graph(directed):
     g = Graph(directed)
     vertices: list[Vertex] = []
@@ -34,3 +35,10 @@ def build_tsp_graph(directed):
     g.add_edge(vertices[3], vertices[1], 6)
     g.add_edge(vertices[3], vertices[2], 1)
     return g
+
+
+def visited_all_nodes(visited_vertices):
+    for vertex in visited_vertices:
+        if visited_vertices[vertex] == "unvisited":
+            return False
+    return True
