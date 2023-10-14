@@ -5,7 +5,7 @@ from manhattan_graph import manhattan_graph, thirty_sixth_and_sixth, grand_centr
 def heuristic(start, target):
     x_distance = abs(start.position[0] - target.position[0])
     y_distance = abs(start.position[1] - target.position[1])
-    return x_distance + y_distance
+    return (x_distance**2 + y_distance**2)**0.5
 
 
 def a_star(graph, start, target):
