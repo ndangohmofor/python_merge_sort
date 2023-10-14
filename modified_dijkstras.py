@@ -1,5 +1,6 @@
 from math import inf
 from heapq import heappop, heappush
+from manhattan_graph import manhattan_graph, thirty_sixth_and_sixth, grand_central_station
 
 
 def modified_dijkstra(graph, start, target):
@@ -28,3 +29,6 @@ def modified_dijkstra(graph, start, target):
                 print("At {0}\n".format(vertices_to_visit[0][1].name) )
     print("Found a path in {0} steps: ".format(count), path_and_distance[target][1])
     return path_and_distance[target][1]
+
+
+modified_dijkstra(manhattan_graph, thirty_sixth_and_sixth, grand_central_station)
